@@ -1,3 +1,4 @@
+## Mock1 1
 1) Weight: 6
 Deploy a pod named nginx-pod using the nginx:alpine image.
 
@@ -29,6 +30,7 @@ status: {}
 ```
 
 ------------------------------------
+## Mock1 2
 2) Weight: 8
 Deploy a messaging pod using the redis:alpine image with the labels set to tier=msg.
 
@@ -44,6 +46,7 @@ A) Run below command which create a pod with labels:
 Details
 > kubectl run messaging --image=redis:alpine --labels=tier=msg
 ------------------------------------
+## Mock1 3
 3) Weight: 4
 Create a namespace named apx-x9984574.
 
@@ -55,6 +58,7 @@ A) Run below command to create a namespace:
 Details
 > kubectl create namespace apx-x9984574
 ------------------------------------
+## Mock1 4
 4) Weight: 7
 Get the list of nodes in JSON format and store it in a file at /opt/outputs/nodes-z3444kd9.json.
 
@@ -67,6 +71,7 @@ Details
 > kubectl get nodes -o json > /opt/outputs/nodes-z3444kd9.json
 
 ------------------------------------
+## Mock1 5
 5) Weight: 12
 Create a service messaging-service to expose the messaging application within the cluster on port 6379.
 
@@ -86,6 +91,7 @@ A)Execute below command which will expose the pod on port 6379:
 Details
 > kubectl expose pod messaging --port=6379 --name messaging-service
 ------------------------------------
+## Mock1 6
 6) Weight: 11
 Create a deployment named hr-web-app using the image kodekloud/webapp-color with 2 replicas.
 
@@ -130,6 +136,7 @@ In v1.19, we can add --replicas flag with kubectl create deployment command:
 > kubectl create deployment hr-web-app --image=kodekloud/webapp-color --replicas=2
 
 ------------------------------------
+## Mock1 7
 7) Weight: 8
 Create a static pod named static-busybox on the controlplane node that uses the busybox image and the command sleep 1000.
 
@@ -163,6 +170,7 @@ status: {}
 ```
 
 ------------------------------------
+## Mock1 8
 8) Weight: 12
 Create a POD in the finance namespace named temp-bus with the image redis:alpine.
 
@@ -177,6 +185,7 @@ Details
 > kubectl run temp-bus --image=redis:alpine -n finance
 
 ------------------------------------
+## Mock1 9
 9) Weight: 8
 A new application orange is deployed. There is something wrong with it. Identify and fix the issue.
 
@@ -196,6 +205,7 @@ Delete the running Orange pod and recreate the pod using command.
 > kubectl create -f orange.yaml
 
 ------------------------------------
+## Mock1 10
 10) Weight: 10
 Expose the hr-web-app as service hr-web-app-service application on port 30082 on the nodes on the cluster.
 
@@ -236,6 +246,7 @@ status:
   loadBalancer: {}
 ```
 ------------------------------------
+## Mock1 11
 11) Weight: 6
 Use JSON PATH query to retrieve the osImages of all the nodes and store it in a file /opt/outputs/nodes_os_x43kj56.txt.
 
@@ -250,6 +261,7 @@ Details
 > kubectl get nodes -o jsonpath='{.items[*].status.nodeInfo.osImage}' > /opt/outputs/nodes_os_x43kj56.txt
 
 ------------------------------------
+## Mock1 12
 12) Weight: 8
 Create a Persistent Volume with the given specification: -
 
