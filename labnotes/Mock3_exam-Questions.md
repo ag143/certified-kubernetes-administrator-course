@@ -1,3 +1,4 @@
+## Mock3 1
 1) Weight: 12
 Create a new service account with the name pvviewer. Grant this Service account access to list all PersistentVolumes in the cluster by creating an appropriate cluster role called pvviewer-role and ClusterRoleBinding called pvviewer-role-binding.
 Next, create a pod called pvviewer with the image: redis and serviceAccount: pvviewer in the default namespace.
@@ -36,7 +37,7 @@ spec:
   serviceAccountName: pvviewer
 ```
 ---------------------------
-
+## Mock3 2
 2) Weight: 12
 List the InternalIP of all nodes of the cluster. Save the result to a file /root/CKA/node_ips.
 
@@ -49,7 +50,7 @@ A) Details
 > kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="InternalIP")].address}' > /root/CKA/node_ips
 
 ---------------------------
-
+## Mock3 3
 3) Weight: 12
 Create a pod called multi-pod with two containers.
 Container 1: name: alpha, image: nginx
@@ -101,7 +102,7 @@ status: {}
 ```
 ---------------------------
 
-
+## Mock3 4
 4) Weight: 8
 Create a Pod called non-root-pod , image: redis:alpine
 
@@ -133,7 +134,7 @@ spec:
 ```
 ---------------------------
 
-
+## Mock3 5
 5) Weight: 14
 We have deployed a new pod called np-test-1 and a service called np-test-service. Incoming connections to this service are not working. Troubleshoot and fix it.
 Create NetworkPolicy, by the name ingress-to-nptest that allows incoming connections to the service over port 80.
@@ -171,7 +172,7 @@ spec:
 ```
 ---------------------------
 
-
+## Mock3 6
 6) Weight: 12
 Taint the worker node node01 to be Unschedulable. Once done, create a pod called dev-redis, image redis:alpine, to ensure workloads are not scheduled to this worker node. Finally, create a new pod called prod-redis and image: redis:alpine with toleration to be scheduled on node01.
 
@@ -218,7 +219,7 @@ View the pods with short details:
 > kubectl get pods -owide | grep prod-redis
 ---------------------------
 
-
+## Mock3 7
 7) Weight: 8
 Create a pod called hr-pod in hr namespace belonging to the production environment and frontend tier .
 image: redis:alpine
@@ -238,7 +239,7 @@ Details
 
 ---------------------------
 
-
+## Mock3 8
 8) Weight: 8
 A kubeconfig file called super.kubeconfig has been created under /root/CKA. There is something wrong with the configuration. Troubleshoot and fix it.
 
@@ -257,7 +258,7 @@ kubectl cluster-info --kubeconfig=/root/CKA/super.kubeconfig
 ```
 ---------------------------
 
-
+## Mock3 9
 9) Weight: 14
 We have created a new deployment called nginx-deploy. scale the deployment to 3 replicas. Has the replica's increased? Troubleshoot the issue and fix it.
 
