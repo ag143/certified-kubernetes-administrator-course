@@ -1,3 +1,4 @@
+# Lightning Lab 1
 1) Weight: 15
 Upgrade the current version of kubernetes from 1.29.0 to 1.30.0 exactly using the kubeadm utility. Make sure that the upgrade is carried out one node at a time starting with the controlplane node. To minimize downtime, the deployment gold-nginx should be rescheduled on an alternate node before upgrading each node.
 
@@ -128,7 +129,7 @@ To do cluster upgrades faster and save at least 3 minutes, you can work on both 
 While kubeadm upgrade apply is running on controlplane, which takes some minutes, open a second terminal and perform steps ii, iii and iv of "Upgrade node01", so that it is ready for kubeadm upgrade node as soon as you have drained it
 -----------------
 
-
+# Lightning Lab 2
 2) Weight: 15
 Print the names of all deployments in the admin2406 namespace in the following format:
 
@@ -152,7 +153,7 @@ This is a job for custom-columns output of kubectl
 
 > kubectl -n admin2406 get deployment -o custom-columns=DEPLOYMENT:.metadata.name,CONTAINER_IMAGE:.spec.template.spec.containers[].image,READY_REPLICAS:.status.readyReplicas,NAMESPACE:.metadata.namespace --sort-by=.metadata.name > /opt/admin2406_data
 
-
+# Lightning Lab 3
 -------------------------
 3) Weight: 8
 A kubeconfig file called admin.kubeconfig has been created in /root/CKA. There is something wrong with the configuration. Troubleshoot and fix it.
@@ -175,7 +176,7 @@ Test
 
 > kubectl get pods --kubeconfig /root/CKA/admin.kubeconfig
 
-
+# Lightning Lab 4
 -------------------------
 4) Weight: 12
 Create a new deployment called nginx-deploy, with image nginx:1.16 and 1 replica. Next upgrade the deployment to version 1.17 using rolling update.
@@ -193,7 +194,7 @@ You may ignore the deprecation warning.
 
 
 -------------------------
-
+# Lightning Lab 5
 5) Weight: 20
 A new deployment called alpha-mysql has been deployed in the alpha namespace. However, the pods are not running. Troubleshoot and fix the issue. The deployment should make use of the persistent volume alpha-pv to be mounted at /var/lib/mysql and should use the environment variable MYSQL_ALLOW_EMPTY_PASSWORD=1 to make use of an empty root password.
 
@@ -233,7 +234,7 @@ spec:
   storageClassName: slow
 ```
 -------------------------
-
+# Lightning Lab 6
 6)Weight: 10
 Take the backup of ETCD at the location /opt/etcd-backup.db on the controlplane node.
 
@@ -254,6 +255,7 @@ Whilst we could also use the argument --endpoints=127.0.0.1:2379, it is not nece
 
 
 -------------------------
+# Lightning Lab 7
 7) Weight: 20
 Create a pod called secret-1401 in the admin1401 namespace using the busybox image. The container within the pod should be called secret-admin and should sleep for 4800 seconds.
 
