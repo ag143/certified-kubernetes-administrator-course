@@ -108,7 +108,7 @@ do
 
 
     echo -e "${BLUE}Launching ${node}${NC}"
-    if ! multipass launch $bridge_arg --disk 5G --memory $VM_MEM_GB --cpus 2 --name $node jammy 2>/dev/null
+    if ! multipass launch $bridge_arg --disk 10G --memory $VM_MEM_GB --cpus 2 --name $node jammy 2>/dev/null
     then
         # Did it actually launch?
         sleep 1
@@ -159,7 +159,7 @@ then
         echo -e "${BLUE}- ${node}${NC}"
         multipass transfer $hostentries $node:/tmp/
         multipass transfer $SCRIPT_DIR/*.sh $node:/tmp/
-        for script in 02-setup-kernel.sh 03-setup-cri.sh 04-kube-components.sh
+        for script in 02-setup-kernel.sh 03-setup-nodes.sh 04-kube-components.sh
         do
             multipass exec $node -- /tmp/$script
         done

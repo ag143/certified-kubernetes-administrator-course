@@ -25,9 +25,9 @@ Note that this lab is sequential. You must solve test 1 completely before you ca
 
    Now we see that the `webapp` and `mysql` pods are stuck at `ContainerCreating`. We need to describe the pods and check the errors.
 
-   You will note that they are complaining about `network: unable to allocate IP address`, so clearly we have a networking issue.
+   You will note that they are complaining about `plugin type="weave-net" name="weave" failed (add): unable to allocate IP address`, so clearly we have a networking issue and it's related to Weave.
 
-   When you did the `get pods` above, did you see any evidence of network support containers, like `flannel` or `weave`?
+   When you did the `get pods` above, did you see any evidence of network support containers, like `weave`?
 
    No - so we need to install networking support.
 
@@ -102,7 +102,7 @@ Note that this lab is sequential. You must solve test 1 completely before you ca
       These two files are
 
       * `config.conf` - This is the actual configuration that kube-proxy needs to load. This file refers to `kubeconfig.conf`
-      * `kubeconfig.conf` - This is simply a a kubeconfig file, same as you will find on the lab terminal in `~/.kube/config`. It is the credentials and address for kube-proxy to talk to the api server.
+      * `kubeconfig.conf` - This is simply a kubeconfig file, same as you will find on the lab terminal in `~/.kube/config`. It is the credentials and address for kube-proxy to talk to the api server.
 
    1. Fix the command line arguments to `kube-proxy`
 
